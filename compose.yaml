@@ -1,0 +1,15 @@
+services:
+  json-server:
+    build:
+      dockerfile: Dockerfile.db
+    image: ghcr.io/nemethlorin/joke-jsonserver:0.0.2
+      
+    ports:
+      - "3000:80"
+   
+  front-end:
+    build:
+      dockerfile: Dockerfile.front-end
+    image: ghcr.io/nemethlorin/joke-frontend:0.0.2
+    ports:
+      - "8080:80"
